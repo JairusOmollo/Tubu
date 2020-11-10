@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html  lang="en">
+    <%- include('./partials/head.ejs') %>
+     <body>
+        <div class="left-arrow"><i class="fas fa-arrow-left"></i></div>
+        <nav class="money-nav navbar  ">
+            
+            
+            <div>  
+            <small class="text-muted label-route" >Route</small>
+            <h3 class="heading-route"><%= users.pickUp %> | <%= users.dropOff %> </h3>
+        </div>
+        <div>
+            <small class="text-muted label-total" >Price</small>
+            <h3 class="heading-total">Ksh <%= charges %></h3>
+        </div>
+          </nav>
+    <div class="container">
+        <div class="gallery">
+                    <% if(hearses.length > 0){ %>
+                        <% hearses.forEach((hearse) => {%>
+                            
+                            <div class="gallery-card" >
+                                <a href="/api/v1/hearses/<%= hearse._id %>">   
+                            <img src= "<%=hearse.imagea %>" alt="Gallery image 1" class="gallery__img">
+                            <div class="gallery-text">
+                                <div class="gallery-paragraph"><%=hearse.numberOfSeats%> seats</div>
+                                <div class=" gallery-select"> Select</div>
+                               
+                          
+                            </div>
+            
+                        </a>
+                          </div>
+                       <% }) %>
+                    <% } %>
+        </div>
+        <%- include('./partials/footer.ejs') %>
+        
+    </body>
+</html>
+

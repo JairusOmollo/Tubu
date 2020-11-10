@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+ <html  lang="en">
+  <%- include('./partials/head.ejs') %>
+     <body>
+         
+      <nav class="navbar navbar-expand-lg  navbar-light ">
+            
+            
+        <button class= "navbar-toggler" type="button" data-toggle="collapse" data-target= "#navbarResponsive">
+            <span class ="navbar-toggler-icon"></span>
+        </button>
+        
+        <a class= "navbar-brand "><h2 class="logo"> tubu</h2></a>
+        <div class ="collapse navbar-collapse" id="navbarResponsive">
+            <ul class= "navbar-nav ml-auto">
+                 <li class ="nav-item">
+                    <div class="call-us">
+                      <img class="call-centre-icon" src="/phone.png">
+                      <p class="call-centre">020 000 3400</p>
+                    </div> 
+                
+                </li>
+            </ul>
+        </div>   
+        
+   
+    </nav>
+       <!----------------end of navbar---> 
+    <div class="container-fluid">
+     
+             <div class="background-wrapper">
+                 
+                 <div>
+                     <h1 class="top-title">Choose from a range of hearses</h1>
+                     <h1 class="big-header text-muted">See  the rates to hire a hearse  and send <br> your budget to the owner. </h1>
+                     
+                 </div>
+         <div class=" wrapper-hero">
+              
+          
+             
+             <!----------begin app top-------->
+            
+                 
+              <div class="wrapper appSpacing"> 
+                <div class="lg-heading">
+                  
+                 
+                  
+              </div>
+                 
+                     <div class="xs-heading">
+                         <h4 class="hero-heading">  See the rates to hire a hearse and <br>send your budget request to the owner </h4>
+                         
+                     
+                     </div>
+                     <form action= "/api/v1/kms" method="POST">
+                     <div class="inputAlign form-group">
+                         <label ><p class="origin-label" >PICKUP</p></label>
+                         <input  id="searchPick" class="picky " placeholder=" Type here to search locations " name="origin"type= "text"/> 
+                        
+                  </div>
+              
+                     <div class="inputAlign form-group">
+                         <label class="origin-label" >DROPPOFF</label>
+                         <input  id ="searchDrop"class="dropy " placeholder=" Type here to search locations" name="destination" type= "text"/> 
+
+                  </div>
+                  
+                     <div class="inputAlign form-group" >
+                         <label class="origin-label" >WHEN</label>
+                         <input class="date-size " placeholder="Click calendar" type= "date" name="date" />
+                     </div>
+
+                   
+
+                     <button type="submit" class="btn btn-lg btn-block" onclick="showDiv()"  > CHOOSE A HEARSE
+                         
+                     </button> 
+                    </form>
+                             
+                         </div>
+                        
+                     </div>
+        </div>
+                    
+                 
+                 
+              
+        
+         
+           
+            
+         
+             <!----------end of top----------->
+         
+         
+     <div id="hearse-icons" class="wrapper cartegory">
+         
+         <div class="cartegory-images">
+             <a href="/api/v1/hearses?vehicle=Bus">
+             <img class="cartegory-thumbnail" src="/bus.png"/>
+             <p class="icon-details">Bus</p>
+             </a>
+         </div>
+         <div class="cartegory-images">
+             <a href="https://www.google.co.ke/">
+             <img class="cartegory-thumbnail" src="/van.png"/>
+             <p class="icon-details"> Van</p>
+             </a>
+         
+         </div>
+         <div class="cartegory-images">
+            
+             <a href="https://www.google.co.ke/">
+             <img class="cartegory-thumbnail" src="/wagon.png"/>
+             <p class="icon-details" >Wagon</p>
+             </a>
+         
+         </div>
+         
+         
+     
+     
+     </div>
+           
+
+         
+               <div class="wrapper bottom">
+
+                <div class="divider"> 100+ KENYAN HEARSES <span class="divider-line">|</span> ALERT DRIVERS <span class="divider-line" >|</span> FAIR PRICE </div>
+
+    
+             <div id="card-area">
+             
+                 <div id="cards">
+                  
+
+                  <img class="how-to-icons" src="/pin.png" alt="Card image cap">
+                  <div>
+                    <h3 class="how-to-headings">Type Your Location</h3>
+                  </div>
+                  <div >
+                    <p class="how-to-text text-muted" > Type the locations and date of travel in the search boxes, pick the locations shown on the dropdown menu and press 'choose a hearse' button </p>
+                  </div>
+                </div>
+        
+                 
+             <div id="cards" >
+                  <img class="how-to-icons" src="/gallery.png" alt="Card image cap">
+                  <div>
+                    <h3 class="how-to-headings">Choose Hearses From a Photo Gallery</h3>
+                  </div>
+                  <div >
+                    <p class="how-to-text text-muted" > The 'choose a hearse' button  reveals icons of different hearse types. Click the bus icon and a price estimate and photos of buses will appear on the gallery. Take similar steps for vans and wagon hearses     </p>
+                  </div>
+            </div>
+
+            <div id="cards" >
+              <img class="how-to-icons" src="/calculations.png" alt="Card image cap">
+              <div>
+                <h3 class="how-to-headings ">Send Your Budget to Hearse Owners</h3>
+              </div>
+              <div >
+                <p class="how-to-text text-muted" >Here you can send a budget request and your phone number to  hearse owners who respond fast </p>
+              </div>
+        </div>
+             
+             </div>
+             
+                 
+             <div class="footer-info footer-copyright text-center py-3">© 2020 Copyright:<span class="divider-line">Tubu hearses</span>
+                 
+                
+                 
+              
+                 
+                 </div>
+             
+           </div>
+        
+        
+        </div>
+         
+      
+        
+      
+  <script> 
+                  
+                
+                  function activateSearchPlaces(){
+
+                   let autocomplete
+                   let autocomplete2
+                            var input = document.getElementById('searchPick');
+                            var input2 = document.getElementById('searchDrop');
+                            var options = {
+                              types: ['(cities)'],
+                              componentRestrictions: {country: 'ke'}
+                            };
+
+                            autocomplete = new google.maps.places.Autocomplete(input, options);
+                            autocomplete2 = new google.maps.places.Autocomplete(input2, options)
+                    }
+
+          
+  </script>
+
+
+<script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbOe26YTEQ8sa8fBBGA7pLDhr7JghjmpI&libraries=places&callback=activateSearchPlaces">
+</script>
+
+<%- include('./partials/footer.ejs') %>
+
+
+        
+        
+     
+        </div>   
+    </body>
+</html>
+
