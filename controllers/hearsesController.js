@@ -33,7 +33,7 @@ const Hearse = require ('./../models/GetHearses');
         let type = {
           vehicle:'Bus'
          }
-         console.log(vehicle)
+         
        
          let charge = (kms * 185).toLocaleString("en", {   
           minimumFractionDigits: 0,

@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session')
 const MongoStore = require ('connect-mongo')(session)
 const { check, validationResult } = require('express-validator');
+const compression = require('compression')
 
 //start express app
 const app = express();
@@ -37,6 +38,7 @@ app.use(session({
     
 }));
 
+app.use(compression());
 
 
 
