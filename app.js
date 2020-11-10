@@ -12,6 +12,7 @@ const session = require('express-session')
 const MongoStore = require ('connect-mongo')(session)
 const { check, validationResult } = require('express-validator');
 
+//start express app
 const app = express();
 
 //register view engine
