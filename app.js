@@ -15,6 +15,7 @@ const compression = require('compression')
 
 //start express app
 const app = express();
+if(process.env.NODE_ENV === 'production'){
 
 //register view engine
 app.set('view engine', 'ejs');
@@ -54,4 +55,4 @@ app.use('/api/v1/home', budgetRouter )
 
 
 module.exports = app;
-
+}
