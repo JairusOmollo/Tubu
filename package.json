@@ -4,7 +4,7 @@
   "description": "hearse services",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "dev": "nodemon -r dotenv/config server.js",
     "debug": "ndb server.js"
   },
@@ -23,7 +23,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
-    "mongoose": "^5.10.9"
+    "mongoose": "^5.10.9",
+    "nodemailer": "^6.4.15"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^18.2.0",
@@ -35,7 +36,6 @@
     "eslint-plugin-react": "^7.21.4",
     "multer": "^1.4.2",
     "ndb": "^1.1.5",
-    "nodemailer": "^6.4.14",
     "nodemon": "^2.0.4",
     "prettier": "^2.1.2"
   }

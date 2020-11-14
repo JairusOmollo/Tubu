@@ -10,7 +10,7 @@ mongoose.connect(DB, {
   useNewUrlParser:true,
   useCreateIndex:true,
   useFindAndModify:false,
-  useUnifiedTopology: true 
+  useUnifiedTopology: true
 }).then(() => {
   const port = process.env.PORT || 5000;
   app.listen(port, () => {

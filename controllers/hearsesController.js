@@ -35,7 +35,7 @@ const Hearse = require ('./../models/GetHearses');
          }
          
        
-         let charge = (kms * 185).toLocaleString("en", {   
+         let charge = (kms * 214).toLocaleString("en", {   
           minimumFractionDigits: 0,
           maximumFractionDigits: 0,
       })

@@ -1,6 +1,6 @@
 const express = require('express');
 const Distance = require('./models/Getplaces');
-const AppError = require('./utils/appError')
+
 const cors = require('cors')
 const axios = require('axios');
 const store = require ('./models/SessionsStore')

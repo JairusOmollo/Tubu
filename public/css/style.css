@@ -50,6 +50,19 @@ box-shadow:  -10px 10px 20px #c7c7c7,
 
 .call-centre{
   margin-bottom:0px;
+  color:#333333;
+
+}
+a:hover {
+  text-decoration: none;
+}
+
+
+
+.call-us{
+  border-radius: 12px;
+  box-shadow:  6px 9px 12px #ababab, 
+              -6px -9px 12px #ffffff;
 }
 
 .lg-heading {
