@@ -1,3 +1,4 @@
+const path = require ('path')
 const express = require('express');
 const Distance = require('./models/Getplaces');
 
@@ -12,7 +13,7 @@ const session = require('express-session')
 const MongoStore = require ('connect-mongo')(session)
 const { check, validationResult } = require('express-validator');
 const compression = require('compression')
-process.env.PWD = process.cwd()
+
 
     //start express app
 const app = express();
@@ -22,10 +23,10 @@ app.set('view engine', 'ejs');
 
 //middleware and static files
 app.use(cors())
-app.use(express.static( process.env.PWD + '/public/css' ));
-app.use(express.static(process.env.PWD + '/public/js'));
-app.use(express.static( process.env.PWD +'/public/img'));
-app.use(express.static(process.env.PWD + '/public/google-address-autocomplete'));
+app.use(express.static(path.join(__dirname, '/public/css')))
+app.use(express.static(path.join(__dirname, '/public/js')))
+app.use(express.static(path.join(__dirname, '/public/img')))
+
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
