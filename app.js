@@ -50,20 +50,6 @@ app.use('/api/v1/sendbudget', budgetRouter)
 app.use('/api/v1/home', budgetRouter )
 
 
-// app.all('*',(req,res,next) => {
-    
-// next(new AppError(`Cant find ${req.orinalUrl} on this server!`, 404))
-// })
-
-// app.use((err, req, res, next) =>{
-//     err.statusCode = err.statusCode || 500;
-//     err.status = err.status || 'error'
-
-//     res.status(err.statusCode).json({
-//         status: err.status,
-//         message: err.message
-//     });
-// });
 
 
 
