@@ -20,10 +20,12 @@ const app = express();
 
 //register view engine
 app.set('view engine', 'ejs');
-app.set('views',path.join(__dirname, 'views'))
+
+
 
 //middleware and static files
 app.use(cors())
+console.log(__dirname, 'public' )
 app.use(express.static(path.join(__dirname, '/public/css')))
 app.use(express.static(path.join(__dirname, '/public/js')))
 app.use(express.static(path.join(__dirname, '/public/img')))
@@ -43,14 +45,11 @@ app.use(session({
 
 app.use(compression());
 
-
-
-
 //ROUTES
 app.use('/api/v1/hearses', hearsesRouter)
 app.use('/api/v1/kms', kmsRouter)
 app.use('/api/v1/sendbudget', budgetRouter)
-app.use('/api/v1/home', budgetRouter )
+app.use('/', budgetRouter )
 
 
 
