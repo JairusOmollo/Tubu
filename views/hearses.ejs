@@ -2,7 +2,7 @@
  <html  lang="en">
     <%- include('./partials/head.ejs') %>
      <body>
-        <div class="left-arrow"><i class="fas fa-arrow-left"></i></div>
+        
         <nav class="money-nav navbar  ">
             
             
@@ -21,8 +21,9 @@
                         <% hearses.forEach((hearse) => {%>
                             
                             <div class="gallery-card" >
-                                <a href="/api/v1/hearses/<%= hearse._id %>">   
-                            <img src= "<%=hearse.imagea %>" alt="Gallery image 1" class="gallery__img">
+                                <a href="/api/v1/hearses/<%= hearse._id %>">  
+                                    <img src= "<%=hearse.imagea %>" alt="Gallery image 1" class="gallery__img"> 
+                            
                             <div class="gallery-text">
                                 <div class="gallery-paragraph"><%=hearse.numberOfSeats%> seats</div>
                                 <div class=" gallery-select"> Select</div>

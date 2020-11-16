@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "begin": "nodemon server.js",
     "dev": "nodemon -r dotenv/config server.js",
     "debug": "ndb server.js"
   },

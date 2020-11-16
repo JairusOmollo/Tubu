@@ -9,38 +9,53 @@ const Hearse = require ('./../models/GetHearses');
       let user= req.session.user
       let kms = user.kms
       
+      
   
      let vehicle = req.query
     
      let type =[{vehicle:'Van'},{vehicle:'Wagon'},{vehicle:'Bus'}]
   
      if(vehicle === type[0]){
+      
        let type= {
          vehicle:'Van'
        }
-       let charge = (kms * 185).toLocaleString
+       let charge = (kms * 90).toLocaleString
        
        res.render('hearses', {hearses:result, users:user, charges:charge  })
       } else if(vehicle === type[1]){
+        
         let type = {
         vehicle:'Wagon'
        }
        
-       let charge = kms * 185
+       let charge = kms * 90
        res.render('hearses', {hearses:result, users:user, charges:charge })
   
       } else {
+       
         let type = {
           vehicle:'Bus'
          }
-         
-       
-         let charge = (kms * 214).toLocaleString("en", {   
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0,
-      })
-      req.session.charge = charge
-         res.render('hearses', {hearses:result, users:user, charges:charge })
+
+          let charged = (kms * 214)
+
+            if(charged < 27000){
+              let charge = ((kms * 214) + 18000).toLocaleString("en", {   
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+            })
+            req.session.charge = charge   
+            res.render('hearses', {hearses:result, users:user, charges:charge })
+            } else if (charged){
+            let charge = charged.toLocaleString("en", {   
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+          })
+          req.session.charge = charge   
+            res.render('hearses', {hearses:result, users:user, charges:charge })
+        }
+     
     }
     
   }).catch(error => {
@@ -65,3 +80,7 @@ const Hearse = require ('./../models/GetHearses');
       console.log(err)
     })
   } 
+
+function newFunction(charge) {
+  console.log(charge);
+}

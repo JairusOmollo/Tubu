@@ -2,10 +2,10 @@
 
 
 function showDiv(){
-   var elemnt = document.getElementById('hearse-icons')
+    var elemnt = document.getElementById('hearse-icons')
 
-   elemnt.style.display="grid";
+   setTimeout(elemnt.style.display="grid") 
  
-    elemnt.scrollIntoView({behavior: 'smooth'},7000)
+    elemnt.scrollIntoView({behavior: 'smooth'})
   
 }
