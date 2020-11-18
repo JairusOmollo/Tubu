@@ -23,29 +23,29 @@ exports.mailer = (req, res) => {
     <li>phone number: ${req.body.phone}</li>
     <li>budget ${req.body.budget}</li>
     <li>number plate:${hearsesRequested.numberPlate}</li>
-    <li>number plate:${hearsesRequested.mobileNumber}</li>
+    <li>customer mobile number:${hearsesRequested.mobileNumber}</li>
   </ul>
  
 `;
 
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  host: 'tubu.co.ke',
+  port: 465,
+  secure: true, // true for 465, false for other ports
   auth: {
-      user: 'gernetj@gmail.com', // generated ethereal user
-      pass: 'felicity2'  // generated ethereal password
-  },
-  tls:{
-    rejectUnauthorized:false
-  } 
+      user: 'customerrequest@tubu.co.ke', // generated ethereal user
+      pass: 'Felicity@123'  // generated ethereal password
+  }
+  // tls:{
+  //   rejectUnauthorized:false
+  // } 
 });
 
 // setup email data with unicode symbols
 let mailOptions = {
-    from: '"Tubu " <gernetj@gmail.com>', // sender address
-    to: 'gernetj@gmail.com', // list of receivers
+    from: '"Tubu " <customerrequest@tubu.co.ke>', // sender address
+    to: 'customerrequest@tubu.co.ke', // list of receivers
     subject: 'Tubu-Customer-request', // Subject lin
     html: output // html body
 };
