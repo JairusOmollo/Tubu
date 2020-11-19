@@ -54,6 +54,7 @@
                          
                      
                      </div>
+                     <div class="input-container">
                      <form action= "/api/v1/kms" method="POST">
                      <div class="inputAlign form-group">
                          <label ><p class="origin-label" >PICKUP</p></label>
@@ -78,6 +79,7 @@
                          
                      </button> 
                     </form>
+                  </div>
                              
                          </div>
                         
@@ -195,7 +197,7 @@
                             var input = document.getElementById('searchPick');
                             var input2 = document.getElementById('searchDrop');
                             var options = {
-                              types: ['(cities)'],
+                              // types: ['(cities)'],
                               componentRestrictions: {country: 'ke'}
                             };
 
