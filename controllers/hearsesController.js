@@ -61,7 +61,7 @@ const Hearse = require ('./../models/GetHearses');
           let charged = (kms * 214)
 
             if(charged < 27000){
-              let charge = ((kms * 214) + 15000).toLocaleString("en", {   
+              let charge = ((kms * 214) + 20000).toLocaleString("en", {   
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
             })
