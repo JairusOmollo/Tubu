@@ -19,6 +19,7 @@ module.exports.holder= async (req, res ) =>{
   let user = await db.collection('sessions').insertOne({
     pickUp:req.body.origin,
     dropOff:req.body.destination,
+    when:req.body.dateOfTravel,
     kms:req.body.kms 
   })
  
@@ -28,12 +29,13 @@ module.exports.holder= async (req, res ) =>{
       req.session.user = {
             pickUp: req.body.origin,
             dropOff :req.body.destination,
+            when:req.body.date,
             kms:req.body.kms
       };
      
   }   res.status(204).send()
 
-        // res.redirect('/api/v1/home')
+        //  res.redirect('/')
 
   }catch(error){
     console.log(error)

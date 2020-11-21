@@ -56,26 +56,33 @@
                      </div>
                      <div class="input-container">
                      <form action= "/api/v1/kms" method="POST">
+
+                      <% if (locals.errors) { %>
+                        
+                            <% Object.values(errors).forEach(function(error){ %>
+                                  <div class="alert alert-danger" role="alert"><%= error.msg %></div>
+                            <% }); %>
+                        
+                        <% } %>
                      <div class="inputAlign form-group">
                          <label ><p class="origin-label" >PICKUP</p></label>
-                         <input  id="searchPick" class="picky " placeholder=" Type here to search location " name="origin"type= "text"/> 
+                         <input  id="searchPick" class="picky " placeholder=" Type here to search location " name="origin"type= "text"/>
                         
                   </div>
-              
-                     <div class="inputAlign form-group">
+                     <div class="inputAlign error form-group">
                          <label class="origin-label" >DROPPOFF</label>
-                         <input  id ="searchDrop"class="dropy " placeholder=" Type here to search location" name="destination" type= "text"/> 
-
+                         <input  id ="searchDrop"class="dropy " placeholder=" Type here to search location" name="destination" type= "text"/>
                   </div>
                   
-                     <div class="inputAlign form-group" >
+                    
+                     <div class="inputAlign  form-group" >
                          <label class="origin-label" >WHEN</label>
                          <input class="date-size " placeholder="Click calendar" type= "date" name="date" />
                      </div>
-
-                   
-
-                     <button type="submit" class="btn btn-lg btn-block" onclick="setTimeout(showDiv,1100)"  > CHOOSE A HEARSE
+                     
+                    
+            
+                     <button type="submit" class="btn btn-lg btn-block" onclick="setTimeout(showDiv,1300)"  > CHOOSE A HEARSE
                          
                      </button> 
                     </form>

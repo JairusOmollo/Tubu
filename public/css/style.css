@@ -136,6 +136,10 @@ input::placeholder {
   text-align: start;
 }
 
+.alert{
+  padding:5px 5px;
+  margin-bottom: 5px;
+}
 .date-size {
   width: 100%;
 }

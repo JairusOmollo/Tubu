@@ -18,12 +18,14 @@ exports.mailer = (req, res) => {
   <p>You have a new Customer Budget</p>
   <h3>Customer Budget</h3>
   <ul>  
-    <li>origin: ${user.pickUp}</li>
-    <li>destination: ${user.dropOff}</li>
-    <li>phone number: ${req.body.phone}</li>
-    <li>budget ${req.body.budget}</li>
-    <li>number plate:${hearsesRequested.numberPlate}</li>
-    <li>customer mobile number:${hearsesRequested.mobileNumber}</li>
+    <li>Origin: ${user.pickUp}</li>
+    <li>Destination: ${user.dropOff}</li>
+    <li>Date of travel: ${user.when}</li>
+    <li> Customer phone number: ${req.body.phone}</li>
+    <li> Customer budget ${req.body.budget}</li>
+    <li>Number plate:${hearsesRequested.numberPlate}</li>
+    <li>Hearse owner mobile:${hearsesRequested.mobileNumber}</li>
+    <li>Contact person:${hearsesRequested.contactPerson}</li>
   </ul>
  
 `;

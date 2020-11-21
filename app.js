@@ -15,6 +15,7 @@ const { check, validationResult } = require('express-validator');
 const compression = require('compression')
 
 
+
     //start express app
 const app = express();
 
@@ -50,10 +51,6 @@ app.use('/api/v1/hearses', hearsesRouter)
 app.use('/api/v1/kms', kmsRouter)
 app.use('/api/v1/sendbudget', budgetRouter)
 app.use('/', budgetRouter )
-
-
-
-
 
 module.exports = app;
 
