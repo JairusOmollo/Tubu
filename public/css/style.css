@@ -73,7 +73,7 @@ a:hover {
 .hero-heading {
   text-align: center;
   font-size: 1.7rem;
-  padding-top: 12px;
+  padding-top: 3px;
   font-weight: normal;
 }
 .header-desc {
@@ -135,6 +135,8 @@ input::placeholder {
   font-size: 15px;
   text-align: start;
 }
+
+
 
 .alert{
   padding:5px 5px;
@@ -383,6 +385,8 @@ box-shadow:  14px 14px 28px #bababa,
 }
 .request-title{
   font-size:20px;
+  color: #444950;
+  padding-bottom: 5px;
 }
 
 .input-rider {
@@ -818,7 +822,7 @@ box-shadow:  14px 14px 28px #bababa,
   }
 
   .wrapper{
-    margin-top:20px;
+    margin-top:2px;
   }
 
   .money-nav {
@@ -900,6 +904,17 @@ box-shadow:  14px 14px 28px #bababa,
     background: #ffffff;
     box-shadow: inset 8px 8px 11px #d1d1d1, 
                 inset -8px -8px 11px #ffffff;
+  }
+
+  .blue-title{
+    font-size:1.5rem;
+    text-align: center;
+    background-color:#222831;
+    padding:2px;
+    border-radius: 30px;
+    color: white;
+    word-spacing: 2px;
+   
   }
 
 }
