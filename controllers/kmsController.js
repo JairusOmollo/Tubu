@@ -14,7 +14,7 @@ module.exports.holder= async (req, res ) =>{
    const alldata = await distance.getDistance();
    //4. Store the results in kms variable .
    
-   req.body.kms = alldata
+   req.body.kms = alldata 
    
   let user = await db.collection('sessions').insertOne({
     pickUp:req.body.origin,

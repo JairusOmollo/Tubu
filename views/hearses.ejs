@@ -14,8 +14,11 @@
             <small class="text-muted label-total" >Price</small>
             <h3 class="heading-total">Ksh <%= charges %></h3>
         </div>
+        <div class="parkSubheading text-muted">These hearses park in Nairobi</div>
           </nav>
+          
     <div class="container">
+       
         <div class="gallery">
                     <% if(hearses.length > 0){ %>
                         <% hearses.forEach((hearse) => {%>
@@ -26,7 +29,7 @@
                             
                             <div class="gallery-text">
                                 <div class="gallery-paragraph"><%=hearse.numberOfSeats%> seats</div>
-                                <div class=" gallery-select"> See More</div>
+                                <div class=" gallery-select"> Talk to Owner</div>
                                
                           
                             </div>

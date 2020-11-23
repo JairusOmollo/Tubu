@@ -180,9 +180,14 @@ input::placeholder {
   font-weight: 400;
   max-width: 50%;
 }
-
+.greatJob{
+  grid-area: 1 / 1 / span 1 / span 3;
+  padding:5px;
+  font-size:20px;
+}
 .cartegory {
   display: none;
+  grid-template-rows: 1f 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   max-width: 100%;
   margin: 0px 150px 50px 150px;
@@ -398,6 +403,10 @@ box-shadow:  14px 14px 28px #bababa,
   background: #ffffff;
   box-shadow: inset 8px 8px 11px #d1d1d1, 
               inset -8px -8px 11px #ffffff;
+}
+
+.parkSubheading{
+  font-size:13px;
 }
 
 /****media queries***/
@@ -810,6 +819,11 @@ box-shadow:  14px 14px 28px #bababa,
 
 
   }
+  .parkSubheading{
+    padding-top:18px;
+    padding-left:30px;
+   
+  }
 
 
   .icon-details {
@@ -907,13 +921,11 @@ box-shadow:  14px 14px 28px #bababa,
   }
 
   .blue-title{
-    font-size:1.5rem;
+    font-size:1.3rem;
     text-align: center;
-    background-color:#222831;
     padding:2px;
     border-radius: 30px;
-    color: white;
-    word-spacing: 2px;
+    color: #333333
    
   }
 

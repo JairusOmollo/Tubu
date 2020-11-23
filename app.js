@@ -36,11 +36,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     secret: 'secret token',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    unset: 'destroy',
+    unset: 'keep',
     store: store,
     name: 'session cookie name',
+    cookie :{ path: '/', httpOnly: true, maxAge: 30*24*60*60*1000} 
     
 }));
 
