@@ -745,10 +745,10 @@ box-shadow:  14px 14px 28px #bababa,
 
   .divider {
   text-align: center;
-  margin-top:15px;
+  margin-top:60px;
   font-size: 12px;
   background-color: #222831;
-  padding: 15px 0px 15px 0px;
+  padding: 40px 0px 15px 0px;
   color: white;
   letter-spacing: 1px;
 }
