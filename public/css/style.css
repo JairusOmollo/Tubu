@@ -57,7 +57,10 @@ a:hover {
   text-decoration: none;
 }
 
-
+.dateOfTravel{
+  padding:5px 0px 5px 10px;
+  font-size:15px;
+}
 
 .call-us{
   border-radius: 12px;
@@ -710,6 +713,8 @@ box-shadow:  14px 14px 28px #bababa,
     font-size: 15px;
     font-weight: 300;
     letter-spacing: normal;
+    margin:0px  0px 40px 8px;
+    font-weight: 800;
   }
   .money-nav {
     grid-gap: 8px;

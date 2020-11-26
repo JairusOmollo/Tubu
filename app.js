@@ -51,7 +51,7 @@ app.use(compression());
 app.use('/api/v1/hearses', hearsesRouter)
 app.use('/api/v1/kms', kmsRouter)
 app.use('/api/v1/sendbudget', budgetRouter)
-app.use('/', budgetRouter )
+app.use('/', budgetRouter)
 
 module.exports = app;
 

@@ -20,7 +20,7 @@ exports.mailer = (req, res) => {
   <ul>  
     <li>Origin: ${user.pickUp}</li>
     <li>Destination: ${user.dropOff}</li>
-    <li>Date of travel: ${user.when}</li>
+    <li>Date of travel: ${req.body.date}</li>
     <li> Customer phone number: ${req.body.phone}</li>
     <li> Customer budget ${req.body.budget}</li>
     <li>Number plate:${hearsesRequested.numberPlate}</li>

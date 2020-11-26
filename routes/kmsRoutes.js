@@ -5,6 +5,7 @@ const router = express.Router()
 const {check,validationResult} = require('express-validator')
 
 
+
   const validate = (req, res,next) =>{
     //check validate data
     const result= validationResult(req);
@@ -25,6 +26,6 @@ const {check,validationResult} = require('express-validator')
 router.route('/').post([
     check('origin', 'Please enter PICKUP location').not().isEmpty(),
     check('destination', 'Please enter DROPOFF location').not().isEmpty(),
-    check('date', 'Please enter WHEN ').not().isEmpty(),
+
   ],validate, kmsController.holder)
 module.exports = router;

@@ -72,28 +72,34 @@
                     <form action= "/api/v1/sendbudget" method="POST">
                      
                         
-                      <h5 class="request-title ">You want to send a budget to the owner?</h5>
-                         <div class="request-info"><span class="text-muted">Route</span> : <%= users.pickUp %> | <%= users.dropOff %> </div>  
+                      <h5 class="request-title ">I want to get a call from the owner </h5>
+                         <!-- <div class="request-info"><span class="text-muted">Route</span> : <%= users.pickUp %> | <%= users.dropOff %> </div>  
               
                           <div class="request-info" > <span class="text-muted" >No. plate :</span> <%= budget.numberPlate %> </div>
-                          <div class="request-info"> <span class="text-muted">No. of seats :</span> <%= budget.numberOfSeats %> </div>
+                          <div class="request-info"> <span class="text-muted">No. of seats :</span> <%= budget.numberOfSeats %> </div> -->
                           <div class="request-info"> <span class="text-muted">Price to hire :</span> Ksh <%= charges %> </div>
                           
-                      <div class="gazibo"> Includes : Gazibo tent . Lowering gear . Public address </div>
+                      <div class="gazibo">  </div>
                     
                       <div class="">
                          
-                        <input name="budget"type="search" class="input-rider" placeholder="Type your budget here e.g 60000"  type= "text"> 
+                        <input name="budget"type="search" class="input-rider" placeholder="Type your budget here e.g 60000"  type= "text">
                         
                         
                  </div>
                      
                   <div class="">
                        
-                        <input name="phone" type="search" class="input-rider" placeholder="What's your mobile number? e.g 07XXXXXXX"  type= "text"> 
-                        
+                        <input name="phone" type="search" class="input-rider" placeholder="What's your mobile number? e.g 07XXXXXXX"  type= "text">    
                         
                  </div>
+                 <div class="text-muted dateOfTravel">Date of Travel</div>
+                 <div class="">
+                       
+                  <input class="input-rider" placeholder="date of travel" type= "date" name="date"  >    
+                  
+           </div>
+
                  
                       <button type="submit" id=button-pg2 class=" btn btn-lg btn-block " data-toggle="modal" data-target="#exampleModalCenter"> Send budget 
                         

@@ -1,85 +1,154 @@
-  
 const app = require('../app');
 const Hearse = require ('./../models/GetHearses');
 
 
+
+
+
+
  exports.getAllHearses =  (req, res) => {
-
    Hearse.find(req.query).then((result) => {
-
-      let user= req.session.user;
-      let kms = user.kms;
-
 
       let vehicle = JSON.stringify(req.query);
       let van = JSON.stringify({vehicle:'Van'})
       let bus = JSON.stringify({vehicle:'Bus'})
       let wagon = JSON.stringify({vehicle:'Wagon'})
-
-      // 1. Calculate charges for a van.
+      let user= req.session.user;
+      let kms = user.kms;
       
-     if(vehicle === van ){
-       
-      let charged = (kms * 150)
-      if(charged > 30000 ){
-          let charge = ((kms * 150) - 25000).toLocaleString("en", {   
-          minimumFractionDigits: 0,
-          maximumFractionDigits: 0,
-      })
-        req.session.charge = charge   
-        res.render('hearses', {hearses:result, users:user, charges:charge })
-      } else if (charged){
-        let charge = charged.toLocaleString("en", {   
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    })
-      req.session.charge = charge   
-       res.render('hearses', {hearses:result, users:user, charges:charge })
-   }
-      // 2. Calculate wagon charges 
-      } else if (vehicle === wagon){
-        
-        let charged = (kms * 160)
 
-        if(charged < 27000){
-          let charge = ((kms * 160) + 15000).toLocaleString("en", {   
+    // Calculates Van charges
+     function calculateVanCharge(){
+        let charge = user.kms * 110 
+       
+        if (charge <= 8000){
+          let charge = (8000).toLocaleString("en", {   
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
         })
-        req.session.charge = charge   
+        req.session.charge = charge 
+        res.render('hearses', {hearses:result, users:user, charges:charge })  
+        }
+        else if (charge > 40000){
+          let charge = (40000).toLocaleString("en", {   
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        })
+        req.session.charge = charge
+        res.render('hearses', {hearses:result, users:user, charges:charge })  
+        } 
+
+       else { 
+        let charge = (user.kms * 110 ).toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+        req.session.charge = charge 
         res.render('hearses', {hearses:result, users:user, charges:charge })
-        } else if (charged){
-        let charge = charged.toLocaleString("en", {   
+      }
+      
+      }
+      // Calculates Bus charges
+
+      function calculateBusCharge(){
+      let charge = user.kms * 214 
+      
+      if (charge <= 30000){
+        let charge = ((kms * 214) + 20000).toLocaleString("en", {   
           minimumFractionDigits: 0,
           maximumFractionDigits: 0,
       })
       req.session.charge = charge   
-        res.render('hearses', {hearses:result, users:user, charges:charge })
-  }
-  
-      } else if (vehicle === bus)  {
-        
-          let charged = (kms * 214)
+      res.render('hearses', {hearses:result, users:user, charges:charge }) 
+      }
+      else if (charge > 70000){
+        let charge = (70000).toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+        req.session.charge = charge   
+        res.render('hearses', {hearses:result, users:user, charges:charge })  
+      } 
 
-            if(charged < 27000){
-              let charge = ((kms * 214) + 20000).toLocaleString("en", {   
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-            })
-            req.session.charge = charge   
-            res.render('hearses', {hearses:result, users:user, charges:charge })
-            } else if (charged){
-            let charge = charged.toLocaleString("en", {   
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-          })
-          req.session.charge = charge   
-            res.render('hearses', {hearses:result, users:user, charges:charge })
+      else { 
+        let charged = charge.toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+        req.session.charge = charged   
+        res.render('hearses', {hearses:result, users:user, charges:charged })
+      
+    }
+  }
+      function calculateWagonCharge(){
+        let charge = user.kms * 160 
+       
+        if (charge <= 27000){
+          let charge = (8000 + 15000).toLocaleString("en", {   
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        })
+        req.session.charge = charge 
+        res.render('hearses', {hearses:result, users:user, charges:charge })  
+        }
+        else if (charge > 60000){
+          let charge = (60000).toLocaleString("en", {   
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        })
+        req.session.charge = charge
+        res.render('hearses', {hearses:result, users:user, charges:charge })  
+        } 
+
+       else { 
+        let charge = (user.kms * 110 ).toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+        req.session.charge = charge 
+        res.render('hearses', {hearses:result, users:user, charges:charge })
+      }
+      
+      }
+      // Calculates Bus charges
+
+      function calculateBusCharge(){
+      let charge = user.kms * 214 
+      
+      if (charge <= 30000){
+        let charge = ((kms * 214) + 20000).toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+      req.session.charge = charge   
+      res.render('hearses', {hearses:result, users:user, charges:charge }) 
+      }
+      else if (charge > 70000){
+        let charge = (70000).toLocaleString("en", {   
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+      })
+        req.session.charge = charge   
+      res.render('hearses', {hearses:result, users:user, charges:charge },)  
       }
     }
-        
+
     
-  }).catch(error => {
+   // Render Bus ,Van or Wagon charges  to the view. 
+
+     if(vehicle === van ){
+      exports.van = calculateVanCharge() 
+      // 2. Calculate wagon charges 
+      } else if (vehicle === wagon){
+       exports.wagon = calculateWagonCharge()
+  
+      } else if (vehicle === bus)  {
+        exports.bus = calculateBusCharge()    
+    }
+      
+    
+  
+}).catch(error => {
     console.log(error)
   })       
 }
@@ -101,4 +170,3 @@ const Hearse = require ('./../models/GetHearses');
       console.log(err)
     })
   } 
-

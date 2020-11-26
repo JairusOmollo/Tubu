@@ -1,7 +1,8 @@
 const app = require('../app');
 const { db } = require('../models/GetHearses');
 const Distance = require('./../models/Getplaces')
-const store = require ('./../models/SessionsStore')
+const store = require ('./../models/SessionsStore');
+const { getAllHearses,van ,wagon, bus } = require('./hearsesController');
 
 module.exports.holder= async (req, res ) =>{
 
@@ -33,7 +34,9 @@ module.exports.holder= async (req, res ) =>{
             kms:req.body.kms
       };
      
-  }   res.status(204).send()
+  }   
+  res.status(204).send()
+  
 
         //  res.redirect('/')
 
@@ -46,6 +49,7 @@ module.exports.holder= async (req, res ) =>{
 
      }
 
+    
    
 
    

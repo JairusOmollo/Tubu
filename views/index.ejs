@@ -50,13 +50,13 @@
               </div>
                  
                      <div class="xs-heading">
-                      <div class="blue-title">100+ Kenyan Hearses to Hire</div>
+                      <div class="blue-title">Kenyan Hearses to Hire</div>
                          <h3 class="hero-heading"> Get price estimate between two places </h3>
                          
                      
                      </div>
                      <div class="input-container">
-                     <form action= "/api/v1/kms" method="POST">
+                     <form id="trip-locations" action= "/api/v1/kms" method="POST" ">
 
                       <% if (locals.errors) { %>
                         
@@ -67,23 +67,20 @@
                         <% } %>
                      <div class="inputAlign form-group">
                          <label ><p class="origin-label" >PICKUP</p></label>
-                         <input  id="searchPick" class="picky " placeholder=" Where will we come? " name="origin"type= "text"/>
+                         <input  id="searchPick" class="picky focus" placeholder=" Where will we come? " name="origin"type= "text" />
                         
                   </div>
                      <div class="inputAlign error form-group">
                          <label class="origin-label" >DROPPOFF</label>
-                         <input  id ="searchDrop"class="dropy " placeholder=" Where will you be going?" name="destination" type= "text"/>
+                         <input  id ="searchDrop"class="dropy focus " placeholder=" Where will you be going?" name="destination" type= "text"/>
                   </div>
                   
                     
-                     <div class="inputAlign  form-group" >
-                         <label class="origin-label" >WHEN</label>
-                         <input class="date-size " placeholder="Click calendar" type= "date" name="date" />
-                     </div>
+  
                      
                     
             
-                     <button type="submit" class="btn btn-lg btn-block" onclick="setTimeout(showDiv,1300)"  > SUBMIT
+                     <button type="submit" class="btn btn-lg btn-block" onclick="setTimeout(showDiv,1300)"  onsubmit ="return false"> SUBMIT
                          
                      </button> 
                     </form>
@@ -107,10 +104,12 @@
              
      <div id="hearse-icons" class="wrapper cartegory">
 
-     <div class="greatJob text-muted ">Great Job! Pick a vehicle</div>
+     <div class="greatJob text-muted ">Great! Pick a vehicle</div>
          
          <div class="cartegory-images">
              <a href="/api/v1/hearses?vehicle=Bus">
+              
+              
              <img class="cartegory-thumbnail" src="/bus.png"/>
              <p class="icon-details">Bus</p>
              </a>
