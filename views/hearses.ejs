@@ -24,21 +24,68 @@
                         <% hearses.forEach((hearse) => {%>
                             
                             <div class="gallery-card" >
-                                <a href="/api/v1/hearses/<%= hearse._id %>">  
+                                <a href="tel:0202030015">  
+                                
                                     <img src= "<%=hearse.imagea %>" alt="Gallery image 1" class="gallery__img"> 
-                            
+
+                             
                             <div class="gallery-text">
                                 <div class="gallery-paragraph"><%=hearse.numberOfSeats%> seats</div>
-                                <div class=" gallery-select"> Contacts</div>
+                                <a  href="/api/v1/hearses/<%= hearse._id %>" >
+                                    <div class="gallery-select"> Photos</div>
+                                </a>
+                                <a href="tel:0202030015" >
+                                    <div type="button"class="gallery-select" data-toggle="modal" data-target="#modalRelatedContent" > Call</div>
+                                </a>
+                                
                                
-                          
+                               
                             </div>
             
-                        </a>
+                       
                           </div>
                        <% }) %>
                     <% } %>
         </div>
+        <!-- Button trigger modal-->
+        <div class="container large-screen-modal ">
+              <!--Modal: modalRelatedContent-->
+              <div class="modal fade right" id="modalRelatedContent" tabindex="-1" role="dialog"
+                aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+                  <!--Content-->
+                  <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                      <p class="heading">Customer care </p>
+              
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                      </button>
+                    </div>
+              
+                    <!--Body-->
+                    <div class="modal-body">
+              
+                      <div class="row">
+                        
+              
+                        <div class=" col-12">
+                         
+                          <p>You can call and ask questions about mortuary transfer and funeral transportation</p>
+                          <p class="calling-number"><strong>0202030015</strong></p> 
+                        
+              
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/.Content-->
+                </div>
+              </div>
+              <!--Modal: modalRelatedContent-->
+        </div>
+
         <%- include('./partials/footer.ejs') %>
         
     </body>

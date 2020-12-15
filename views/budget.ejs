@@ -72,14 +72,14 @@
                     <form action= "/api/v1/sendbudget" method="POST">
                      
                         
-                      <h5 class="request-title ">I want to get a call from the owner </h5>
-                         <!-- <div class="request-info"><span class="text-muted">Route</span> : <%= users.pickUp %> | <%= users.dropOff %> </div>  
+                      <!-- <h5 class="request-title ">I want to get a call from the owner </h5> -->
+                         <div class="request-info"><span class="text-muted">Route</span> : <%= users.pickUp %> | <%= users.dropOff %> </div>  
               
                           <div class="request-info" > <span class="text-muted" >No. plate :</span> <%= budget.numberPlate %> </div>
-                          <div class="request-info"> <span class="text-muted">No. of seats :</span> <%= budget.numberOfSeats %> </div> -->
+                          <div class="request-info"> <span class="text-muted">No. of seats :</span> <%= budget.numberOfSeats %> </div>
                           <div class="request-info"> <span class="text-muted">Price to hire :</span> Ksh <%= charges %> </div>
                           
-                      <div class="gazibo">  </div>
+                      <!-- <div class="gazibo">  </div>
                     
                       <div class="">
                          
@@ -98,13 +98,55 @@
                        
                   <input class="input-rider" placeholder="date of travel" type= "date" name="date"  >    
                   
-           </div>
+           </div> -->
 
+           <a href="tel:0202030015" >
+            <div type="button"class="gallery-select" data-toggle="modal" data-target="#modalRelatedContent" > Call</div>
+        </a>
+
+ <!-- <button type="submit" id=button-pg2 class=" btn btn-lg btn-block " data-toggle="modal" data-target="#exampleModalCenter"> Send budget 
+                        
+                    </button>  -->
                  
-                      <button type="submit" id=button-pg2 class=" btn btn-lg btn-block " data-toggle="modal" data-target="#exampleModalCenter"> Send budget 
-                        
-                    </button> 
-                        
+                     
+                      <!-- Button trigger modal-->
+        <div class="container large-screen-modal ">
+          <!--Modal: modalRelatedContent-->
+          <div class="modal fade right" id="modalRelatedContent" tabindex="-1" role="dialog"
+            aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-info" role="document">
+              <!--Content-->
+              <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                  <p class="heading">Customer care </p>
+          
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                  </button>
+                </div>
+          
+                <!--Body-->
+                <div class="modal-body">
+          
+                  <div class="row">
+                    
+          
+                    <div class=" col-12">
+                     
+                      <p>You can call and ask questions about mortuary transfer and funeral transportation</p>
+                      <p class="calling-number"><strong>0202030015</strong></p> 
+                    
+          
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/.Content-->
+            </div>
+          </div>
+          <!--Modal: modalRelatedContent-->
+    </div>  
                       
                   </form>
                       </div>
